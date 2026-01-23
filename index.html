@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jéssica Fernandes | Terapia Sistêmica</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#FDFBF7',       /* Off-white creme (fundo geral) */
+                            primary: '#B08D74',  /* Bronze/Cobre Principal */
+                            olive: '#868F68',    /* Verde Oliva (Novo - do Header) */
+                            oliveDark: '#556B2F',/* Verde Escuro (Texto do Logo) */
+                            secondary: '#E8E4D9',/* Bege de contraste */
+                            dark: '#2C2A29',     /* Chumbo quente */
+                            text: '#595552',     /* Cinza médio */
+
+                            /* NOVAS CORES PARA O MODO DARK */
+                            deep: '#0F1410',     /* Fundo quase preto esverdeado */
+                            moss: '#1A231C',     /* Verde musgo profundo para cards/detalhes */
+                            light: '#E6E4DD',    /* Off-white para texto no escuro */
+                            sage: '#AAB396',    /* Verde sálvia suave para detalhes */
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                        'fade-in': 'fadeIn 1.5s ease-out forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                        'marquee': 'marquee 25s linear infinite',
+                        'spin-slow': 'spin 12s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Gradiente Bronze Premium */
+        .gradient-bronze {
+            background: linear-gradient(90deg, #A0522D 0%, #CD853F 100%);
+            transition: all 0.4s ease;
+        }
+
+        .gradient-bronze:hover {
+            filter: brightness(1.1);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(160, 82, 45, 0.3);
+        }
+
+        /* Botão Verde Oliva */
+        .btn-olive {
+            background-color: #868F68;
+            transition: all 0.3s ease;
+        }
+
+        .btn-olive:hover {
+            background-color: #727a58;
+            transform: translateY(-1px);
+        }
+
+        /* Utilitários de Vidro e Sombra */
+        .glass-header {
+            background: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(176, 141, 116, 0.2);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+
+<body class="bg-brand-bg antialiased overflow-x-hidden text-brand-dark">
+
+    <header class="fixed top-0 w-full z-50 glass-header h-[90px] flex items-center transition-all duration-300">
+        <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center">
+
+            <a href="#" class="flex items-center gap-3 group">
+                <div
+                    class="w-12 h-12 rounded-full border border-brand-olive/30 flex items-center justify-center p-1 opacity-90 group-hover:opacity-100 transition-opacity">
+                    <svg class="text-brand-oliveDark w-full h-full" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2m10-2a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v2M12 7a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" />
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 14c-4 0-6-4-6-4s2-4 6-4 6 4 6 4-2 4-6 4z" />
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-2xl text-brand-oliveDark leading-none tracking-wide">Jéssica
+                        Fernandes</span>
+                    <span class="font-sans text-[10px] text-brand-text uppercase tracking-[0.2em] mt-1">Terapeuta
+                        Sistêmica</span>
+                </div>
+            </a>
+
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="#teste"
+                    class="btn-olive text-white font-sans text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-md shadow-sm">
+                    Faça seu teste
+                </a>
+                <a href="#iniciar"
+                    class="gradient-bronze text-white font-sans text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-md shadow-md">
+                    Iniciar Processo
+                </a>
+            </div>
+
+            <button class="lg:hidden text-brand-dark focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <section class="relative min-h-screen flex items-center justify-center pt-32 pb-12 lg:pt-20 lg:pb-0">
+
+        <div
+            class="absolute top-0 right-0 w-2/3 h-full bg-brand-secondary/20 rounded-l-full -z-10 translate-x-1/4 blur-3xl">
+        </div>
+        <div class="absolute bottom-20 left-10 w-64 h-64 border border-brand-olive/10 rounded-full animate-float -z-10">
+        </div>
+
+        <div class="container mx-auto px-6 lg:px-12 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                <div class="lg:col-span-6 space-y-8 opacity-0 animate-fade-in-up order-2 lg:order-1"
+                    style="animation-delay: 0.2s;">
+
+                    <span
+                        class="inline-block py-1 px-3 border border-brand-olive/30 rounded-full text-brand-oliveDark text-xs font-sans font-semibold tracking-widest uppercase mb-2 bg-brand-olive/5">
+                        Autoconhecimento & Cura
+                    </span>
+
+                    <h1
+                        class="font-serif text-4xl lg:text-5xl xl:text-6xl text-brand-dark leading-[1.15] tracking-tight">
+                        Você sente que já tentou de tudo, <span class="italic text-brand-primary">mas algo ainda
+                            pesa</span> sobre você?
+                    </h1>
+
+                    <div class="relative pl-6 border-l-2 border-brand-primary/30">
+                        <p class="font-sans text-brand-text text-lg leading-relaxed font-light">
+                            A vida não anda. Você se sente ansiosa, perdida, vive em alerta. Eu te ajudo a acessar a
+                            <strong class="font-medium text-brand-oliveDark">raiz emocional</strong> por trás desses
+                            sintomas, reprogramando os traumas e a forma como o seu corpo aprendeu a lidar com a dor.
+                        </p>
+
+                        <p class="font-sans text-brand-dark text-lg mt-5 font-medium">
+                            Pra que você comece, enfim, a construir uma autoestima saudável e realizar seus sonhos.
+                        </p>
+                    </div>
+
+                    <div class="pt-4 flex flex-col sm:flex-row gap-4 lg:hidden">
+                        <a href="#iniciar"
+                            class="gradient-bronze text-center text-white font-sans text-sm font-bold uppercase tracking-widest px-8 py-4 rounded-md shadow-lg w-full">
+                            Iniciar Processo
+                        </a>
+                    </div>
+
+                    <div class="hidden lg:flex items-center gap-4 pt-4 opacity-80">
+                        <div class="flex -space-x-3">
+                            <div class="w-10 h-10 rounded-full border-2 border-white bg-gray-200 bg-cover"
+                                style="background-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?fit=crop&w=100&q=80')">
+                            </div>
+                            <div class="w-10 h-10 rounded-full border-2 border-white bg-gray-300 bg-cover"
+                                style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?fit=crop&w=100&q=80')">
+                            </div>
+                            <div
+                                class="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center bg-brand-olive text-xs font-serif text-white font-bold">
+                                +2k</div>
+                        </div>
+                        <p class="text-xs font-sans text-brand-text max-w-[150px] leading-tight">Mulheres que
+                            reencontraram sua essência.</p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 relative opacity-0 animate-fade-in order-1 lg:order-2"
+                    style="animation-delay: 0.5s;">
+                    <div
+                        class="absolute inset-0 bg-brand-primary/10 rounded-tl-[120px] rounded-br-[120px] rotate-3 scale-95 z-0">
+                    </div>
+
+                    <div class="relative z-10 p-2">
+                        <div class="relative overflow-hidden rounded-t-[150px] rounded-b-[20px] shadow-2xl glass-card">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Jéssica Fernandes Terapeuta"
+                                class="w-full h-[450px] lg:h-[550px] object-cover object-top filter sepia-[0.1] contrast-[0.95]">
+                        </div>
+
+                        <div
+                            class="absolute bottom-10 -left-4 lg:-left-8 bg-white/95 backdrop-blur-xl p-5 rounded-lg shadow-xl border-l-4 border-brand-olive animate-float max-w-[200px]">
+                            <div class="flex items-start gap-3">
+                                <span class="text-3xl text-brand-primary leading-none">“</span>
+                                <div>
+                                    <p class="font-serif text-brand-dark italic text-lg leading-tight mb-1">Acolher sua
+                                        história...</p>
+                                    <p class="font-sans text-[10px] text-brand-text uppercase tracking-wider font-bold">
+                                        É o primeiro passo</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce text-brand-primary/50 hidden lg:block">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3">
+                </path>
+            </svg>
+        </div>
+    </section>
+
+    <section id="sobre" class="relative bg-brand-deep py-24 overflow-hidden text-brand-light">
+
+        <div
+            class="relative w-full border-t border-b border-brand-olive/20 py-4 mb-16 bg-brand-moss/30 backdrop-blur-sm">
+            <div class="flex overflow-hidden whitespace-nowrap mask-gradient">
+                <div class="flex animate-marquee min-w-full gap-8 items-center">
+                    <span
+                        class="text-4xl lg:text-6xl font-serif text-brand-olive/20 uppercase tracking-widest px-4">Jéssica
+                        Fernandes</span>
+                    <span class="text-xl text-brand-primary/40">✦</span>
+                    <span
+                        class="text-4xl lg:text-6xl font-serif text-brand-olive/20 uppercase tracking-widest px-4">Terapia
+                        Sistêmica</span>
+                    <span class="text-xl text-brand-primary/40">✦</span>
+                    <span
+                        class="text-4xl lg:text-6xl font-serif text-brand-olive/20 uppercase tracking-widest px-4">Constelação
+                        Familiar</span>
+                    <span class="text-xl text-brand-primary/40">✦</span>
+                    <span
+                        class="text-4xl lg:text-6xl font-serif text-brand-olive/20 uppercase tracking-widest px-4">Jéssica
+                        Fernandes</span>
+                    <span class="text-xl text-brand-primary/40">✦</span>
+                </div>
+                <div class="flex animate-marquee min-w-full gap-8 items-center absolute top-4 left-full">
+                    <span
+                        class="text-4xl lg:text-6xl font-serif text-brand-olive/20 uppercase tracking-widest px-4">Jéssica
+                        Fernandes</span>
+                    <span class="text-xl text-brand-primary/40">✦</span>
+                    <span
+                        class="text-4xl lg:text-6xl font-serif text-brand-olive/20 uppercase tracking-widest px-4">Terapia
+                        Sistêmica</span>
+                    <span class="text-xl text-brand-primary/40">✦</span>
+                    <span
+                        class="text-4xl lg:text-6xl font-serif text-brand-olive/20 uppercase tracking-widest px-4">Constelação
+                        Familiar</span>
+                    <span class="text-xl text-brand-primary/40">✦</span>
+                    <span
+                        class="text-4xl lg:text-6xl font-serif text-brand-olive/20 uppercase tracking-widest px-4">Jéssica
+                        Fernandes</span>
+                    <span class="text-xl text-brand-primary/40">✦</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-6 lg:px-12 relative z-10">
+            <div class="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
+
+                <div class="w-full lg:w-5/12 relative order-2 lg:order-1">
+
+                    <div
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-brand-olive/20 rounded-full blur-[80px] -z-10">
+                    </div>
+
+                    <div
+                        class="relative rounded-t-[200px] rounded-b-[20px] overflow-hidden border border-brand-olive/30 shadow-2xl">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-brand-deep/80 via-transparent to-transparent z-10">
+                        </div>
+
+                        <img src="https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Jéssica Fernandes tomando café"
+                            class="w-full h-[500px] object-cover object-center filter sepia-[0.2] grayscale-[0.2]">
+                    </div>
+
+                    <div class="absolute -top-10 -right-6 lg:-right-12 z-20">
+                        <div
+                            class="relative w-32 h-32 lg:w-40 lg:h-40 flex items-center justify-center animate-spin-slow">
+                            <svg viewBox="0 0 100 100" width="100%" height="100%"
+                                class="fill-current text-brand-primary">
+                                <defs>
+                                    <path id="circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
+                                </defs>
+                                <text font-size="11" font-family="Montserrat" font-weight="bold" letter-spacing="2">
+                                    <textPath xlink:href="#circle">
+                                        JÉSSICA FERNANDES • TERAPEUTA •
+                                    </textPath>
+                                </text>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <span class="text-3xl text-brand-light transform -rotate-[var(--rotation)]">✦</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-7/12 space-y-8 order-1 lg:order-2 text-center lg:text-left">
+
+                    <h2 class="font-serif text-4xl lg:text-5xl text-brand-light leading-tight">
+                        <span
+                            class="block text-brand-olive text-lg font-sans font-medium tracking-widest uppercase mb-2">Sobre
+                            a Especialista</span>
+                        Jéssica Fernandes
+                    </h2>
+
+                    <div class="space-y-6 text-brand-light/80 font-sans text-lg font-light leading-relaxed">
+
+                        <div class="relative py-4">
+                            <span
+                                class="absolute -left-8 -top-4 text-6xl text-brand-primary/20 font-serif leading-none hidden lg:block">“</span>
+                            <p
+                                class="text-xl text-brand-light font-medium italic border-l-2 lg:border-l-0 lg:border-l-none border-brand-primary pl-4 lg:pl-0">
+                                Minha história com a terapia começou muito antes de eu decidir transformar isso em
+                                profissão. Foram anos observando como nossos traumas moldam nossas escolhas.
+                            </p>
+                        </div>
+
+                        <p>
+                            Há mais de <strong class="text-brand-primary font-semibold">8 anos</strong> dedico minha
+                            vida a estudar, me desenvolver e atender mulheres que, assim como eu, buscam ressignificar o
+                            passado e resgatar sua identidade.
+                        </p>
+
+                        <p>
+                            Foi assim que mergulhei nas formações: Fiz uma pós-graduação em <strong
+                                class="text-brand-light font-medium">Ciências do Comportamento Humano</strong>, formação
+                            internacional em Conhecimentos Sistêmicos realizada na Europa e especializações em
+                            hipnoterapia clínica.
+                        </p>
+
+                        <div
+                            class="pt-6 border-t border-brand-olive/20 mt-8 flex flex-col lg:flex-row items-center lg:items-start gap-4">
+                            <div class="flex flex-col">
+                                <span class="font-serif text-2xl text-brand-primary">Missão</span>
+                                <span class="text-sm uppercase tracking-wide opacity-70">Reconexão & Verdade
+                                    Interior</span>
+                            </div>
+                            <a href="#conhecer"
+                                class="lg:ml-auto group flex items-center gap-2 text-brand-olive hover:text-brand-primary transition-colors">
+                                <span class="uppercase text-xs font-bold tracking-widest">Ler Bio Completa</span>
+                                <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="relative bg-brand-deep py-24 lg:py-32 overflow-hidden border-t border-brand-olive/10">
+
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <div
+                class="absolute left-1/3 top-0 w-[1px] h-full bg-gradient-to-b from-transparent via-brand-primary to-transparent">
+            </div>
+            <div
+                class="absolute right-1/4 top-0 w-[1px] h-full bg-gradient-to-b from-transparent via-brand-primary to-transparent delay-700">
+            </div>
+        </div>
+
+        <div class="container mx-auto px-6 lg:px-12 relative z-10">
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+
+                <div class="lg:col-span-5 lg:sticky lg:top-32 space-y-8">
+
+                    <div class="inline-flex items-center gap-2 mb-4">
+                        <span class="h-[1px] w-12 bg-brand-primary"></span>
+                        <span class="text-brand-primary font-serif uppercase tracking-[0.2em] text-sm">Propósito</span>
+                    </div>
+
+                    <h2 class="font-serif text-5xl lg:text-7xl text-brand-light leading-none">
+                        Minha <br>
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-[#D4AF37]">Missão</span>
+                    </h2>
+
+                    <div class="relative pl-6 lg:pl-8 border-l border-brand-olive/30 space-y-6">
+                        <p class="font-sans text-brand-light font-bold text-xl leading-relaxed">
+                            "Minha missão é ser ponte. Entre a dor e a cura. Entre o passado que aprisiona e o futuro
+                            que inspira."
+                        </p>
+                        <p class="font-sans text-brand-light/70 text-base leading-relaxed">
+                            Acredito que uma mulher curada transforma não somente a própria vida, mas ecoa essa cura em
+                            toda a sua história nas relações, na família e nas gerações que virão.
+                        </p>
+                    </div>
+
+                    <div class="hidden lg:block pt-8">
+                        <a href="#iniciar"
+                            class="group inline-flex items-center gap-4 px-8 py-4 bg-brand-primary/10 border border-brand-primary/40 rounded-full hover:bg-brand-primary hover:text-white transition-all duration-500">
+                            <span
+                                class="font-sans text-xs font-bold uppercase tracking-widest text-brand-light group-hover:text-white">Quero
+                                iniciar meu processo</span>
+                            <svg class="w-4 h-4 text-brand-primary group-hover:text-white transition-colors" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                    <div
+                        class="md:col-span-2 group bg-brand-secondary p-8 rounded-2xl border border-white/10 hover:shadow-[0_0_30px_rgba(176,141,116,0.15)] transition-all duration-500 hover:-translate-y-1 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                            <svg class="w-24 h-24 text-brand-dark" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="relative z-10">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-brand-primary/20 flex items-center justify-center mb-6 text-brand-dark">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <h3 class="font-serif text-2xl text-brand-dark mb-3">Atendimentos Globais</h3>
+                            <p class="font-sans text-brand-text text-sm leading-relaxed">
+                                Histórias que atravessaram fronteiras (Brasil, Europa e EUA) e mostraram que, em
+                                qualquer lugar do mundo, a capacidade de transformação feminina é universal.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#F3F1E9] p-8 rounded-2xl hover:bg-white transition-colors duration-300 group">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-brand-olive/20 flex items-center justify-center mb-6 text-brand-oliveDark">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="font-serif text-xl text-brand-dark mb-2">O Impacto Real</h3>
+                        <p class="font-sans text-brand-text text-xs leading-relaxed">
+                            Além de aliviar sintomas, é sobre devolver às mulheres a dignidade e a paz com sua própria
+                            história.
+                        </p>
+                    </div>
+
+                    <div class="bg-[#F3F1E9] p-8 rounded-2xl hover:bg-white transition-colors duration-300 group">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-brand-olive/20 flex items-center justify-center mb-6 text-brand-oliveDark">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-serif text-xl text-brand-dark mb-2">Saúde Mental</h3>
+                        <p class="font-sans text-brand-text text-xs leading-relaxed">
+                            Dar voz ao que estava guardado e transformar dor em superação e reconexão.
+                        </p>
+                    </div>
+
+                    <div class="bg-[#F3F1E9] p-8 rounded-2xl hover:bg-white transition-colors duration-300 group">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-brand-olive/20 flex items-center justify-center mb-6 text-brand-oliveDark">
+                            <span class="font-serif font-bold text-lg">8+</span>
+                        </div>
+                        <h3 class="font-serif text-xl text-brand-dark mb-2">Anos de Dedicação</h3>
+                        <p class="font-sans text-brand-text text-xs leading-relaxed">
+                            Uma jornada focada exclusivamente na saúde mental e emocional de mulheres.
+                        </p>
+                    </div>
+
+                    <div class="bg-[#F3F1E9] p-8 rounded-2xl hover:bg-white transition-colors duration-300 group">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-brand-olive/20 flex items-center justify-center mb-6 text-brand-oliveDark">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="font-serif text-xl text-brand-dark mb-2">Método Próprio</h3>
+                        <p class="font-sans text-brand-text text-xs leading-relaxed">
+                            Criadora do método "Raízes do Feminino": reprogramação emocional e identidade.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="lg:hidden w-full pt-4">
+                    <a href="#iniciar"
+                        class="w-full block text-center bg-gradient-to-r from-brand-primary to-[#D4AF37] text-white font-sans text-sm font-bold uppercase tracking-widest px-8 py-4 rounded-md shadow-lg">
+                        Quero iniciar meu processo
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="sintomas" class="relative bg-brand-secondary py-24 lg:py-32 overflow-hidden">
+
+        <div class="absolute top-0 left-0 w-full overflow-hidden leading-[0]">
+            <svg class="relative block w-full h-[80px] lg:h-[120px]" data-name="Layer 1"
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="fill-brand-deep"></path>
+            </svg>
+        </div>
+
+        <div class="container mx-auto px-6 lg:px-12 relative z-10 pt-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+
+                <div class="lg:col-span-7 order-2 lg:order-1">
+
+                    <div class="mb-10 text-center lg:text-left">
+                        <span
+                            class="text-brand-oliveDark font-sans font-bold uppercase tracking-widest text-xs mb-2 block">Diagnóstico
+                            Emocional</span>
+                        <h2 class="font-serif text-4xl lg:text-5xl text-brand-dark leading-tight">
+                            Você se identifica com algum <br>
+                            <span class="italic text-brand-primary">desses sintomas?</span>
+                        </h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                        <div
+                            class="group bg-brand-bg p-5 rounded-xl border border-brand-primary/10 hover:border-brand-primary hover:shadow-lg transition-all duration-300 cursor-default flex items-start gap-3">
+                            <div
+                                class="mt-1 min-w-[20px] text-brand-primary/50 group-hover:text-brand-primary transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <span class="text-brand-dark font-sans font-medium text-sm">Medo de ser abandonada</span>
+                        </div>
+
+                        <div
+                            class="group bg-brand-bg p-5 rounded-xl border border-brand-primary/10 hover:border-brand-primary hover:shadow-lg transition-all duration-300 cursor-default flex items-start gap-3">
+                            <div
+                                class="mt-1 min-w-[20px] text-brand-primary/50 group-hover:text-brand-primary transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <span class="text-brand-dark font-sans font-medium text-sm">Sensação constante de
+                                rejeição</span>
+                        </div>
+
+                        <div
+                            class="group bg-brand-bg p-5 rounded-xl border border-brand-primary/10 hover:border-brand-primary hover:shadow-lg transition-all duration-300 cursor-default flex items-start gap-3">
+                            <div
+                                class="mt-1 min-w-[20px] text-brand-primary/50 group-hover:text-brand-primary transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <span class="text-brand-dark font-sans font-medium text-sm">Dificuldades nos
+                                relacionamentos</span>
+                        </div>
+
+                        <div
+                            class="md:col-span-2 group bg-white p-5 rounded-xl border border-brand-primary/10 hover:border-brand-primary hover:shadow-lg transition-all duration-300 cursor-default flex items-start gap-3 transform hover:-translate-y-1">
+                            <div
+                                class="mt-1 min-w-[20px] text-brand-primary/50 group-hover:text-brand-primary transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-brand-dark font-sans font-bold text-sm block mb-1">Padrões de
+                                    autossabotagem</span>
+                                <span class="text-xs text-brand-text">Sentir que você mesma destrói suas conquistas
+                                    quando tudo parece estar bem.</span>
+                            </div>
+                        </div>
+
+                        <div
+                            class="group bg-brand-bg p-5 rounded-xl border border-brand-primary/10 hover:border-brand-primary hover:shadow-lg transition-all duration-300 cursor-default flex items-start gap-3">
+                            <div
+                                class="mt-1 min-w-[20px] text-brand-primary/50 group-hover:text-brand-primary transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <span class="text-brand-dark font-sans font-medium text-sm">Dependência emocional</span>
+                        </div>
+
+                        <div
+                            class="group bg-brand-bg p-5 rounded-xl border border-brand-primary/10 hover:border-brand-primary hover:shadow-lg transition-all duration-300 cursor-default flex items-start gap-3">
+                            <div
+                                class="mt-1 min-w-[20px] text-brand-primary/50 group-hover:text-brand-primary transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <span class="text-brand-dark font-sans font-medium text-sm">Conflitos familiares</span>
+                        </div>
+
+                        <div
+                            class="group bg-brand-bg p-5 rounded-xl border border-brand-primary/10 hover:border-brand-primary hover:shadow-lg transition-all duration-300 cursor-default flex items-start gap-3">
+                            <div
+                                class="mt-1 min-w-[20px] text-brand-primary/50 group-hover:text-brand-primary transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <span class="text-brand-dark font-sans font-medium text-sm">Baixa autoestima</span>
+                        </div>
+
+                        <div
+                            class="group bg-brand-bg p-5 rounded-xl border border-brand-primary/10 hover:border-brand-primary hover:shadow-lg transition-all duration-300 cursor-default flex items-start gap-3">
+                            <div
+                                class="mt-1 min-w-[20px] text-brand-primary/50 group-hover:text-brand-primary transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <span class="text-brand-dark font-sans font-medium text-sm">Sensação de vazio</span>
+                        </div>
+
+                    </div>
+
+                    <p class="mt-8 font-sans text-brand-text text-sm italic">
+                        *Esses são sinais de que sua criança interior ou traumas sistêmicos estão guiando suas decisões.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-5 relative order-1 lg:order-2">
+
+                    <div
+                        class="absolute inset-0 bg-brand-primary/20 rounded-full blur-[60px] transform rotate-12 scale-90">
+                    </div>
+
+                    <div class="relative">
+                        <div
+                            class="relative rounded-t-full rounded-b-[200px] overflow-hidden border-[6px] border-white shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Jéssica Fernandes"
+                                class="w-full h-[550px] object-cover object-top hover:scale-105 transition-transform duration-700">
+
+                        </div>
+
+                        <div class="absolute bottom-20 -left-6 lg:-left-12 max-w-[220px]">
+                            <div
+                                class="bg-white/80 backdrop-blur-md p-6 rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.15)] border border-white relative">
+                                <span
+                                    class="absolute -top-4 -right-4 w-10 h-10 bg-brand-primary rounded-full flex items-center justify-center text-white text-xl shadow-lg">❝</span>
+
+                                <p class="font-serif text-brand-dark text-xl leading-tight text-center">
+                                    Eu me atrevo a <br>
+                                    <span class="font-bold text-brand-oliveDark">fazer diferente.</span>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="beneficios"
+        class="relative bg-brand-bg py-24 lg:py-32 overflow-hidden border-t border-brand-primary/10">
+
+        <div
+            class="absolute -left-20 top-40 w-96 h-96 bg-brand-primary/5 rounded-full blur-3xl -z-0 pointer-events-none">
+        </div>
+
+        <div class="container mx-auto px-6 lg:px-12 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
+
+                <div class="lg:col-span-5 lg:sticky lg:top-32 pb-12">
+
+                    <span
+                        class="inline-block py-1 px-3 border border-brand-primary/30 rounded-full text-brand-primary text-xs font-sans font-bold uppercase tracking-widest mb-6">
+                        Resultados Reais
+                    </span>
+
+                    <h2 class="font-sans text-3xl lg:text-4xl text-brand-dark font-light leading-tight mb-2">
+                        Não é apenas sobre <br> aliviar sintomas.
+                    </h2>
+
+                    <h2
+                        class="font-serif text-4xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-[#D4AF37] leading-none mb-8">
+                        É devolver <br>
+                        <span class="italic">sua força.</span>
+                    </h2>
+
+                    <div class="w-16 h-1 bg-brand-olive/20 mb-8 rounded-full"></div>
+
+                    <p class="font-sans text-brand-text text-lg leading-relaxed opacity-80 max-w-md">
+                        Ao acessar a raiz do problema, o processo terapêutico desbloqueia áreas da sua vida que estavam
+                        estagnadas, permitindo que você volte a fluir.
+                    </p>
+
+                    <div
+                        class="mt-12 w-24 h-24 border border-dashed border-brand-primary/30 rounded-full animate-spin-slow flex items-center justify-center hidden lg:flex">
+                        <div class="w-2 h-2 bg-brand-primary rounded-full"></div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <ul class="space-y-0">
+
+                        <li
+                            class="group flex items-start gap-5 py-6 border-b border-brand-primary/10 hover:border-brand-primary/40 transition-colors duration-300">
+                            <div
+                                class="mt-1 flex-shrink-0 w-6 h-6 rounded border border-brand-primary/40 text-brand-primary flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-all">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-brand-dark font-sans text-lg">
+                                    <strong class="font-bold text-brand-oliveDark">Autonomia emocional</strong>
+                                    <span class="font-light text-brand-text">para confiar em si e nas próprias
+                                        decisões.</span>
+                                </h3>
+                            </div>
+                        </li>
+
+                        <li
+                            class="group flex items-start gap-5 py-6 border-b border-brand-primary/10 hover:border-brand-primary/40 transition-colors duration-300">
+                            <div
+                                class="mt-1 flex-shrink-0 w-6 h-6 rounded border border-brand-primary/40 text-brand-primary flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-all">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-brand-dark font-sans text-lg">
+                                    <strong class="font-bold text-brand-oliveDark">Menos ansiedade e angústia</strong>,
+                                    <span class="font-light text-brand-text">mais calma e presença no agora.</span>
+                                </h3>
+                            </div>
+                        </li>
+
+                        <li
+                            class="group flex items-start gap-5 py-6 border-b border-brand-primary/10 hover:border-brand-primary/40 transition-colors duration-300">
+                            <div
+                                class="mt-1 flex-shrink-0 w-6 h-6 rounded border border-brand-primary/40 text-brand-primary flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-all">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-brand-dark font-sans text-lg">
+                                    <strong class="font-bold text-brand-oliveDark">Clareza mental</strong>
+                                    <span class="font-light text-brand-text">para escolher com segurança o que é melhor
+                                        pra você.</span>
+                                </h3>
+                            </div>
+                        </li>
+
+                        <li
+                            class="group flex items-start gap-5 py-6 border-b border-brand-primary/10 hover:border-brand-primary/40 transition-colors duration-300">
+                            <div
+                                class="mt-1 flex-shrink-0 w-6 h-6 rounded border border-brand-primary/40 text-brand-primary flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-all">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-brand-dark font-sans text-lg">
+                                    <strong class="font-bold text-brand-oliveDark">Equilíbrio entre razão e
+                                        emoção</strong>,
+                                    <span class="font-light text-brand-text">sem se perder nos extremos.</span>
+                                </h3>
+                            </div>
+                        </li>
+
+                        <li
+                            class="group flex items-start gap-5 py-6 border-b border-brand-primary/10 hover:border-brand-primary/40 transition-colors duration-300">
+                            <div
+                                class="mt-1 flex-shrink-0 w-6 h-6 rounded border border-brand-primary/40 text-brand-primary flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-all">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-brand-dark font-sans text-lg">
+                                    <strong class="font-bold text-brand-oliveDark">Autoestima fortalecida</strong>,
+                                    <span class="font-light text-brand-text">sentindo-se suficiente e merecedora.</span>
+                                </h3>
+                            </div>
+                        </li>
+
+                        <li
+                            class="group flex items-start gap-5 py-6 border-b border-brand-primary/10 hover:border-brand-primary/40 transition-colors duration-300">
+                            <div
+                                class="mt-1 flex-shrink-0 w-6 h-6 rounded border border-brand-primary/40 text-brand-primary flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-all">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-brand-dark font-sans text-lg">
+                                    <strong class="font-bold text-brand-oliveDark">Relacionamentos saudáveis</strong>,
+                                    <span class="font-light text-brand-text">com limites claros e leveza.</span>
+                                </h3>
+                            </div>
+                        </li>
+
+                        <li
+                            class="group flex items-start gap-5 py-6 border-b border-brand-primary/10 hover:border-brand-primary/40 transition-colors duration-300">
+                            <div
+                                class="mt-1 flex-shrink-0 w-6 h-6 rounded border border-brand-primary/40 text-brand-primary flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-all">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-brand-dark font-sans text-lg">
+                                    <strong class="font-bold text-brand-oliveDark">Resgate da Força Interior</strong>
+                                    <span class="font-light text-brand-text">para enfrentar desafios sem se
+                                        abandonar.</span>
+                                </h3>
+                            </div>
+                        </li>
+
+                        <li
+                            class="group flex items-start gap-5 py-6 border-b border-brand-primary/10 hover:border-brand-primary/40 transition-colors duration-300">
+                            <div
+                                class="mt-1 flex-shrink-0 w-6 h-6 rounded border border-brand-primary/40 text-brand-primary flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-all">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-brand-dark font-sans text-lg">
+                                    <strong class="font-bold text-brand-oliveDark">Fim da Procrastinação</strong>,
+                                    <span class="font-light text-brand-text">vai enfim retomar seus projetos e
+                                        sonhos.</span>
+                                </h3>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <div class="mt-12 text-center lg:text-left">
+                        <a href="#iniciar"
+                            class="inline-block border-b-2 border-brand-primary text-brand-primary font-sans font-bold uppercase tracking-widest text-sm pb-1 hover:text-brand-oliveDark hover:border-brand-oliveDark transition-colors">
+                            Quero viver essa transformação
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- <div id="services-track" class="flex gap-6 lg:gap-10 overflow-x-hidden pb-16 pt-4 items-stretch select-none">
+
+        <div class="min-w-[80vw] sm:min-w-[360px] lg:min-w-[420px] group flex-shrink-0 card-item">
+            <div
+                class="bg-brand-bg rounded-t-[120px] rounded-b-[24px] overflow-hidden shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.2)] h-full flex flex-col hover:-translate-y-2 transition-all duration-500 border border-white/50">
+
+                <div class="h-80 overflow-hidden relative">
+                    <div
+                        class="absolute inset-0 bg-brand-olive/10 group-hover:bg-transparent transition-colors z-10 mix-blend-multiply">
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Terapia Presencial"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
+                </div>
+
+                <div class="p-8 lg:p-10 flex-1 flex flex-col relative bg-white/50 backdrop-blur-sm">
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500">
+                    </div>
+
+                    <span
+                        class="text-[11px] font-sans font-bold uppercase tracking-[0.2em] text-brand-primary mb-3 block">Serviço</span>
+
+                    <h3 class="font-serif text-3xl text-brand-dark mb-4 leading-tight">Terapia Presencial</h3>
+
+                    <p class="font-sans text-brand-text/90 text-[15px] leading-relaxed mb-8 flex-1">
+                        Para quem valoriza o olho no olho e o acolhimento presencial. Atendimento em Niterói, com espaço
+                        preparado para você se sentir segura, acolhida e livre para ser.
+                    </p>
+
+                    <a href="#"
+                        class="mt-auto inline-flex items-center gap-3 text-brand-oliveDark font-bold text-xs uppercase tracking-widest group-hover:text-brand-primary transition-colors pb-2 border-b border-transparent group-hover:border-brand-primary/30 w-fit">
+                        Saiba mais
+                        <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="min-w-[80vw] sm:min-w-[360px] lg:min-w-[420px] group flex-shrink-0 card-item">
+            <div
+                class="bg-brand-bg rounded-t-[120px] rounded-b-[24px] overflow-hidden shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.2)] h-full flex flex-col hover:-translate-y-2 transition-all duration-500 border border-white/50">
+
+                <div class="h-80 overflow-hidden relative">
+                    <div
+                        class="absolute inset-0 bg-brand-olive/10 group-hover:bg-transparent transition-colors z-10 mix-blend-multiply">
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Terapia em Grupo"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
+                </div>
+
+                <div class="p-8 lg:p-10 flex-1 flex flex-col relative bg-white/50 backdrop-blur-sm">
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500">
+                    </div>
+
+                    <span
+                        class="text-[11px] font-sans font-bold uppercase tracking-[0.2em] text-brand-primary mb-3 block">Serviço</span>
+
+                    <h3 class="font-serif text-3xl text-brand-dark mb-4 leading-tight">Terapia em Grupo</h3>
+
+                    <p class="font-sans text-brand-text/90 text-[15px] leading-relaxed mb-8 flex-1">
+                        Você não é a única. Nos encontros em grupo, você vai descobrir que há força em compartilhar,
+                        ouvir e ser ouvida. É onde as histórias se cruzam e as dores se diluem.
+                    </p>
+
+                    <a href="#"
+                        class="mt-auto inline-flex items-center gap-3 text-brand-oliveDark font-bold text-xs uppercase tracking-widest group-hover:text-brand-primary transition-colors pb-2 border-b border-transparent group-hover:border-brand-primary/30 w-fit">
+                        Saiba mais
+                        <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="min-w-[80vw] sm:min-w-[360px] lg:min-w-[420px] group flex-shrink-0 card-item">
+            <div
+                class="bg-brand-bg rounded-t-[120px] rounded-b-[24px] overflow-hidden shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.2)] h-full flex flex-col hover:-translate-y-2 transition-all duration-500 border border-white/50">
+
+                <div class="h-80 overflow-hidden relative bg-brand-deep">
+                    <div class="absolute inset-0 bg-brand-olive/10 group-hover:bg-transparent transition-colors z-10">
+                    </div>
+                    <div class="w-full h-full flex items-center justify-center relative">
+                        <div class="absolute inset-0 opacity-20"
+                            style="background-image: radial-gradient(circle at center, white 1px, transparent 1px); background-size: 20px 20px;">
+                        </div>
+
+                        <svg class="w-24 h-24 text-brand-sage opacity-60 group-hover:scale-110 transition-transform duration-700"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8">
+                            <path
+                                d="M12 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2m10-2a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v2M12 7a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="p-8 lg:p-10 flex-1 flex flex-col relative bg-white/50 backdrop-blur-sm">
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500">
+                    </div>
+
+                    <span
+                        class="text-[11px] font-sans font-bold uppercase tracking-[0.2em] text-brand-primary mb-3 block">Comunidade</span>
+
+                    <h3 class="font-serif text-3xl text-brand-dark mb-4 leading-tight">Raízes do Feminino</h3>
+
+                    <p class="font-sans text-brand-text/90 text-[15px] leading-relaxed mb-8 flex-1">
+                        Cansada de se sentir sozinha na jornada? Aqui você encontra uma comunidade para pertencer.
+                        Conexão, trocas e conteúdos exclusivos para fortalecer seus vínculos.
+                    </p>
+
+                    <a href="#"
+                        class="mt-auto inline-flex items-center gap-3 text-brand-oliveDark font-bold text-xs uppercase tracking-widest group-hover:text-brand-primary transition-colors pb-2 border-b border-transparent group-hover:border-brand-primary/30 w-fit">
+                        Saiba mais
+                        <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div> -->
+
+</body>
+
+</html>
