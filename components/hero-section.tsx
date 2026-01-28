@@ -100,8 +100,14 @@ export default function HeroSection() {
         <div className="hero-grid">
           <div className="content-col">
             <div className="header-brand">
-              <h2 className="logo">GUIA PRC</h2>
-              <span className="logo-sub">Guia Pratico de Recursos Civeis</span>
+              <img 
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Favicon_Inforproduto-AXDu4aNBVgH92mLd8bsSwixNbepdSQ.png" 
+                alt="Advogue para Empresas - Waleska Quintela" 
+                className="logo-image"
+                style={{ height: '60px', width: 'auto' }}
+              />
+              {/* <h2 className="logo">GUIA PRC</h2>
+              <span className="logo-sub">Guia Pratico de Recursos Civeis</span> */}
             </div>
 
             <h1 className="headline">
