@@ -104,7 +104,7 @@ export default function HeroSection() {
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Favicon_Inforproduto-AXDu4aNBVgH92mLd8bsSwixNbepdSQ.png" 
                 alt="Advogue para Empresas - Waleska Quintela" 
                 className="logo-image"
-                style={{ height: '100px', width: 'auto' }}
+                style={{ height: '140px', width: 'auto' }}
               />
               {/* <h2 className="logo">GUIA PRC</h2>
               <span className="logo-sub">Guia Pratico de Recursos Civeis</span> */}
